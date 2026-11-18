@@ -1,0 +1,5 @@
+---
+permalink: ia
+---
+
+Lorem ipsum

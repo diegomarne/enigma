@@ -17,9 +17,9 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      title: Megrim
-      header: Megrim
-      body: Inter
+      title: IBM Plex Sans
+      header: IBM Plex Sans
+      body: IBM Plex Sans
       code: IBM Plex Mono
     colors:
       lightMode:

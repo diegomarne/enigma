@@ -1,3 +1,8 @@
+---
+title: Fundamentos IA
+---
+
+
 **LLM: Large Lenguage Model** 
 Modelo de IA entrenado con grandes cantidades de texto con el fin de aprender patrones del lenguaje y generar respuestas mediante probabilidad. 
 
