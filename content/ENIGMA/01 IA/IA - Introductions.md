@@ -1,5 +1,4 @@
 ---
 permalink: ia
 ---
-
-Lorem ipsum
+1 - [[Fundamentos]] 
