@@ -1,4 +1,4 @@
 ---
 permalink: ia
 ---
-1 - [[Fundamentos]] 
+1 - [[FUNDAMENTOS]] 

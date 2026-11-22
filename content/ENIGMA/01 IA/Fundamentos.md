@@ -1,11 +1,6 @@
 ---
 title: Fundamentos IA
 ---
-### LLM: Large Lenguage Model
-Modelo de IA entrenado con grandes cantidades de texto con el fin de aprender patrones del lenguaje y generar respuestas mediante probabilidad. 
-
-
-
 ### Inferencia
 Es el proceso que realiza un LLM ya entrenado para generar una respuesta a una petición nueva. **Inferir** significa deducir o sacar una conclusión a partir de otros hechos, datos o premisas.
 
@@ -16,7 +11,6 @@ El proceso sería:
 2. **Inference:**  procesa el texto y genera una respuesta token a token.
     
 3. **Salida:** produce una respuesta.
-
 
 
 ### Parámetros
@@ -68,19 +62,14 @@ A la hora de utilizar un modelo hay que distinguir entre tres tipos de tokens:
 ### Temperatura
 Parámetro que controla el grado de aleatoriedad (o creatividad) en la selección de los siguientes tokens. Un valor bajo genera respuestas predecible y uno alto, más variadas.
 
-La temperatura es un parámetro de _inferencia_, es decir, afecta a cómo genera respuestas un modelo ya entrenado, no a cómo aprende durante su entrenamiento.
+La temperatura es un parámetro de [[#Inferencia]], es decir, afecta a cómo genera respuestas un modelo ya entrenado, no a cómo aprende durante su entrenamiento.
 
 Aclaración: No todos los modelos ni plataformas permiten modificar este parámetro. Algunos pueden configurarse mediante API o herramientas de ejecución local cuando el modelo lo admite. No está directamente relacionado con que el modelo sea open weight.
 
 
 
-### Prompt
-Instrucciones o información que se proporcionan a un modelo para inferir en una respuesta.
-
-
-
 ### Ventana de contexto
-Es la cantidad máxima de tokens que el modelo puede tener en cuenta durante una interacción. Cuanto mayor sea el contexto más información va a poder tener en cuenta pero no garantiza una mejor comprensión ni que el modelo recuerde todos los detalles con la misma precisión.
+Es la cantidad máxima de [[#Tokens]] que el modelo puede tener en cuenta durante una interacción. Cuanto mayor sea el contexto más información va a poder tener en cuenta pero no garantiza una mejor comprensión ni que el modelo recuerde todos los detalles con la misma precisión.
 
 Más ventana de contexto ≠  más inteligencia, solamente indica que permite trabajar con más información. 
 
@@ -118,7 +107,6 @@ Es la capacidad que tiene un modelo de IA para trabajar con distintos tipos de i
 Un matiz **importante**, que un modelo sea multimodal no significa que pueda generar todos esos formatos. Por ejemplo, puede analizar imágenes y audio, pero generar únicamente texto.
 
 
-
 ### Razonamiento
 Es la capacidad del modelo para analizar información, relacionar conceptos y resolver problemas paso a paso hasta llegar a una conclusión.
 
@@ -148,17 +136,26 @@ Se pueden producir alucinaciones por diferenntes motivos:
 - **Pérdida de contexto** no dispone de acceso o se ha resumido perdiendo detalles.
 - **Errores de razonamiento**: dedudcciones incorrectas o errores en una secuencia de pasos.
 
-##### Ejemplos de alucinaciones
-- Datos inventados: atribuir una fecha o cifra incorrecta a un acontecimiento.
-- Fuentes inexistentes: inventar un artículo cientifico, una publicación  o una referencia bibliográfica.
-- Afirmaciones falsas: describir como cierta una característica que un producto o servicio no tiene.
-- Interpretaciones incorrectas: analizar una imágen o un documento y afirmar que contiene algo que realmente no aparece.
+##### Ejemplos 
+- **Datos inventados**: atribuir una fecha o cifra incorrecta a un acontecimiento.
+- **Fuentes inexistentes**: inventar un artículo cientifico, una publicación  o una referencia bibliográfica.
+- **Afirmaciones falsas**: describir como cierta una característica que un producto o servicio no tiene.
+- **Interpretaciones incorrectas**: analizar una imágen o un documento y afirmar que contiene algo que realmente no aparece.
 
 ##### ¿Como podemos reducirlas?
 No podemos eliminarlas completamente pero si reducir su probabilidad:
-- Proporcionar contexto: facilitar la información necesaria para responder.
-- Ser específicos: formular preguntas claras y concretas.
-- Utilizar fuentes fiables: pedir que las respuestas se apoyen en documentación o referencias verificables.
-- Consultar información actualizada: pedir que realice búsquedas web o fuentes externas si necesitamos información actualizada. Por ejemplo documentación sobre una versión de software nueva que acaba de salir, comparar o valorar productos del mercado actual.
-- Verificar las respuestas: comprobar especialmente fechas, cifras, citas y afirmaciones importantes.
-- Permitir que el modelo reconozca la incertidumbre: indicarle que admita cuando no dispone de información suficiente.
+- **Proporcionar contexto**: facilitar la información necesaria para responder.
+- **Ser específicos**: formular preguntas claras y concretas.
+- **Utilizar fuentes fiables**: pedir que las respuestas se apoyen en documentación o referencias verificables.
+- **Consultar información actualizada**: pedir que realice búsquedas web o fuentes externas si necesitamos información actualizada. Por ejemplo documentación sobre una versión de software nueva que acaba de salir, comparar o valorar productos del mercado actual.
+- **Verificar las respuestas**: comprobar especialmente fechas, cifras, citas y afirmaciones importantes.
+- **Permitir que el modelo reconozca la incertidumbre**: indicarle que admita cuando no dispone de información suficiente.
+
+
+### Open weight
+Modelo de IA cuyos pesos pesos ([[#Parámetros]] numéricos aprendidos durante el entrenamiento) están disponibles públicamente para que terceros puedan descargarlos y utilizarlos, según su licencia.
+
+Estos modelos permiten adaptarse a necesidades específicas por ejemplo mediante [[GLOSARIO#Fine-tuning|fine-tunning]]  
+
+###### Open Weight ≠  Open Source
+Que los pesos estén disponibles no significa que también se publiquen el código de entrenamiento, los datos utilizados para entrenar el modelo o toda la información necesaria para reproducir su entrenamiento.
